@@ -754,7 +754,7 @@ class _CupertinoControlsState extends State<CupertinoControls>
     _cancelAndRestartTimer();
     final beginning = Duration.zero.inMilliseconds;
     final skip =
-        (_latestValue.position - const Duration(seconds: 15)).inMilliseconds;
+        (_latestValue.position - const Duration(milliseconds: 500)).inMilliseconds;
     await controller.seekTo(Duration(milliseconds: math.max(skip, beginning)));
     // Restoring the video speed to selected speed
     // A delay of 1 second is added to ensure a smooth transition of speed after reversing the video as reversing is an asynchronous function
@@ -767,7 +767,7 @@ class _CupertinoControlsState extends State<CupertinoControls>
     _cancelAndRestartTimer();
     final end = _latestValue.duration.inMilliseconds;
     final skip =
-        (_latestValue.position + const Duration(seconds: 15)).inMilliseconds;
+        (_latestValue.position + const Duration(milliseconds: 500)).inMilliseconds;
     await controller.seekTo(Duration(milliseconds: math.min(skip, end)));
     // Restoring the video speed to selected speed
     // A delay of 1 second is added to ensure a smooth transition of speed after forwarding the video as forwaring is an asynchronous function
